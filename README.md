@@ -12,7 +12,7 @@ This app allows users to create, edit, and delete notes with persistent local st
 - Persistent data storage
 - Simple and clean UI
 
-## 🛠 Technologies Used
+## Technologies Used
 
 - Kotlin
 - Android SDK
