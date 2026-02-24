@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#D663E9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/updatetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:hint="Enter your Update Title"
+        android:inputType="text"
+        android:textColorHint="#434040"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/updatediscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Enter your discription"
+        android:textColorHint="#434040"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/updatetitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/updatetitle"
+        app:layout_constraintTop_toBottomOf="@+id/updatetitle" />
+<!--    <Button-->
+<!--        android:id="@+id/cancelbtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:backgroundTint="#F20101"-->
+<!--        android:text="Cancel"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/updatediscription"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/updatediscription" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/savebtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:backgroundTint="#09751F"-->
+<!--        android:text="Save"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/updatediscription"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/updatediscription" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
