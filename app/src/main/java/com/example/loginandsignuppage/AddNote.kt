@@ -19,11 +19,8 @@ class AddNote : AppCompatActivity() {
 
         binding = ActivityAddNoteBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Firebase Initialize
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().reference
-
         binding.savenotebtn.setOnClickListener {
 
             val title = binding.etTitle.text.toString().trim()
@@ -39,8 +36,6 @@ class AddNote : AppCompatActivity() {
                 Toast.makeText(this, "User not logged in!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
-
             val noteId = database.child("users")
                 .child(user.uid)
                 .child("notes")
@@ -48,8 +43,6 @@ class AddNote : AppCompatActivity() {
 
 
             val note = NoteItem(title, description, noteId)
-
-            // ✔ Save note with noteId as key
             database.child("users")
                 .child(user.uid)
                 .child("notes")
