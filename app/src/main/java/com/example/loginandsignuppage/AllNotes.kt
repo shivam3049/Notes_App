@@ -23,27 +23,18 @@ class AllNotes : AppCompatActivity(), NoteAdapter.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        // RecyclerView setup
         binding.notesrecycleview.layoutManager = LinearLayoutManager(this)
-
-        // Firebase setup
         databaseReference = FirebaseDatabase.getInstance().reference
         auth = FirebaseAuth.getInstance()
-
         val user = auth.currentUser ?: return
-
         val noteRef = databaseReference.child("users")
             .child(user.uid)
             .child("notes")
 
-        // Fetch notes
         noteRef.addValueEventListener(object : ValueEventListener {
-
             override fun onDataChange(snapshot: DataSnapshot) {
-
+                
                 val noteList = mutableListOf<NoteItem>()
-
                 for (data in snapshot.children) {
                     val note = data.getValue(NoteItem::class.java)
                     if (note != null) {
@@ -53,7 +44,6 @@ class AllNotes : AppCompatActivity(), NoteAdapter.OnItemClickListener {
                 val adapter = NoteAdapter(noteList.reversed(), this@AllNotes)
                 binding.notesrecycleview.adapter = adapter
             }
-
             override fun onCancelled(error: DatabaseError) {}
         })
     }
@@ -97,9 +87,7 @@ class AllNotes : AppCompatActivity(), NoteAdapter.OnItemClickListener {
     private fun updateNote(noteId: String, newTitle: String, newDescription: String) {
 
         val uid = auth.currentUser?.uid ?: return
-
         val updateNote = NoteItem(newTitle, newDescription, noteId)
-
         databaseReference.child("users")
             .child(uid)
             .child("notes")
