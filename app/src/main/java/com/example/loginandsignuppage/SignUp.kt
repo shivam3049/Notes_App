@@ -42,8 +42,6 @@ class SignUp : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
-
-                        // GO TO LOGIN PAGE
                         startActivity(Intent(this, login_page::class.java))
                         finish()
 
@@ -52,8 +50,6 @@ class SignUp : AppCompatActivity() {
                     }
                 }
         }
-
-        // Already have account → go to login
         binding.signbutton.setOnClickListener {
             startActivity(Intent(this, login_page::class.java))
         }
